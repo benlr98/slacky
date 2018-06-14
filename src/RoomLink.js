@@ -1,10 +1,17 @@
 import React from 'react'
 import { StyleSheet, css } from 'aphrodite'
 
-const RoomLink = ({room}) => {
+const RoomLink = ({room, loadRoom }) => {
+    const handleClick = (ev) => {
+        ev.preventDefault()
+        loadRoom(room)
+    }
     return(
         <li className={css(styles.item)}>
-            <a href="/" className={css(styles.link)}>
+            <a  href="/" 
+                className={css(styles.link)}
+                onClick={handleClick}
+            >
                 {room.name}
             </a>
         </li>
