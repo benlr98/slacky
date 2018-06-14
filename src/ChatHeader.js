@@ -4,8 +4,12 @@ const ChatHeader = ({room}) => {
   return (
     <div className="ChatHeader" style={styles.header}>
       <div className="roomInfo">
-        <h2 style={styles.h2}>#{room.name}</h2>
-        <p style={styles.p}> #{room.description} </p>
+        <h2 style={styles.h2}>
+          #{room.name}
+        </h2>
+        <p style={styles.p}>
+          #{room.description} 
+        </p>
       </div>
     </div>
   )
