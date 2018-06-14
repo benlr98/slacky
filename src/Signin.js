@@ -58,6 +58,7 @@ class SignIn extends Component {
     )
   }
 }
+
 const styles = StyleSheet.create({
   signIn: {
     display: 'flex',
@@ -65,6 +66,7 @@ const styles = StyleSheet.create({
     height: '100vh',
     backgroundColor: '#f6f6f6',
   },
+
   header: {
     backgroundColor: '#fff',
     height: '4rem',
@@ -74,6 +76,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     boxShadow: '0 1px 1px rgba(0,0,0,.1)',
   },
+
   title: {
     color: '#ff3344',
     fontWeight: 400,
@@ -81,6 +84,7 @@ const styles = StyleSheet.create({
     lineHeight: '80px',
     fontSize: '2rem',
   },
+
   main: {
     flex: 1,
     textAlign: 'center',
@@ -90,6 +94,7 @@ const styles = StyleSheet.create({
     margin: '0 auto',
     paddingBottom: '3rem',
   },
+
   form: {
     width: '40rem',
     height: '15rem',
@@ -97,11 +102,13 @@ const styles = StyleSheet.create({
     boxShadow: '0 1px 1px rgba(0,0,0,.1)',
     marginBottom: '2rem',
   },
+
   label: {
     display: 'block',
     textTransform: 'uppercase',
     color: '#999',
   },
+
   input: {
     width: '20rem',
     fontSize: '1.5rem',
@@ -111,13 +118,16 @@ const styles = StyleSheet.create({
     marginBottom: '1rem',
     textAlign: 'center',
     padding: '0.5rem',
+
     ':focus': {
       outline: 0,
     },
   },
+
   h2: {
     fontWeight: 'normal',
   },
+
   button: {
     display: 'block',
     margin: '0 auto',
@@ -129,4 +139,5 @@ const styles = StyleSheet.create({
     width: '20rem',
   },
 })
+
 export default SignIn
