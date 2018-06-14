@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, css } from 'aphrodite'
 
-class SignIn extends Component {
+class Signin extends Component {
   state = {
     email: '',
   }
@@ -21,7 +21,7 @@ class SignIn extends Component {
 
   render() {
     return (
-      <div className={`SignIn ${css(styles.signIn)}`}>
+      <div className={`Signin ${css(styles.Signin)}`}>
         <header className={css(styles.header)}>
           <span className={css(styles.title)}>
             <i className="fas fa-hashtag"></i>
@@ -60,7 +60,7 @@ class SignIn extends Component {
 }
 
 const styles = StyleSheet.create({
-  signIn: {
+  Signin: {
     display: 'flex',
     flexDirection: 'column',
     height: '100vh',
@@ -140,4 +140,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default SignIn
+export default Signin

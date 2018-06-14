@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import './App.css'
-import SignIn from './SignIn'
+import Signin from './Signin'
 import Main from './Main'
 
 class App extends Component {
@@ -37,7 +37,7 @@ class App extends Component {
         {
           this.signedIn()
             ? <Main user={this.state.user} signOut={this.signOut} />
-            : <SignIn handleAuth={this.handleAuth} />
+            : <Signin handleAuth={this.handleAuth} />
         }
       </div>
     )
