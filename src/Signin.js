@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { StyleSheet, css } from 'aphrodite'
 
-class Signin extends Component {
+import { auth, googleProvider } from './base'
+
+class SignIn extends Component {
   state = {
     email: '',
   }
@@ -12,16 +14,16 @@ class Signin extends Component {
 
   handleSubmit = (ev) => {
     ev.preventDefault()
-    this.props.handleAuth({
-      uid: '234243',
-      userName: this.state.email,
-      email: this.state.email,
-    })
+    // do something?
+  }
+
+  authenticate = () => {
+    auth.signInWithPopup(googleProvider)
   }
 
   render() {
     return (
-      <div className={`Signin ${css(styles.Signin)}`}>
+      <div className={`SignIn ${css(styles.signIn)}`}>
         <header className={css(styles.header)}>
           <span className={css(styles.title)}>
             <i className="fas fa-hashtag"></i>
@@ -34,7 +36,7 @@ class Signin extends Component {
             onSubmit={this.handleSubmit}
           >
             <h1>Welcome!</h1>
-            <label htmlFor="email" className={css(styles.label)}>
+            {/* <label htmlFor="email" className={css(styles.label)}>
               Email
             </label>
             <input
@@ -47,6 +49,16 @@ class Signin extends Component {
             <button type="submit" className={css(styles.button)}>
               Sign In
             </button>
+            <div>or</div> */}
+
+            <button
+              type="button"
+              className={css(styles.button)}
+              onClick={this.authenticate}
+            >
+              <i className={`fab fa-google ${css(styles.brandIcon)}`}></i>
+              Sign in with Google
+            </button>
           </form>
 
           <div className="blurb">
@@ -58,15 +70,13 @@ class Signin extends Component {
     )
   }
 }
-
 const styles = StyleSheet.create({
-  Signin: {
+  signIn: {
     display: 'flex',
     flexDirection: 'column',
     height: '100vh',
     backgroundColor: '#f6f6f6',
   },
-
   header: {
     backgroundColor: '#fff',
     height: '4rem',
@@ -76,7 +86,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     boxShadow: '0 1px 1px rgba(0,0,0,.1)',
   },
-
   title: {
     color: '#ff3344',
     fontWeight: 400,
@@ -84,7 +93,6 @@ const styles = StyleSheet.create({
     lineHeight: '80px',
     fontSize: '2rem',
   },
-
   main: {
     flex: 1,
     textAlign: 'center',
@@ -94,21 +102,18 @@ const styles = StyleSheet.create({
     margin: '0 auto',
     paddingBottom: '3rem',
   },
-
   form: {
     width: '40rem',
-    height: '15rem',
     backgroundColor: 'white',
     boxShadow: '0 1px 1px rgba(0,0,0,.1)',
     marginBottom: '2rem',
+    paddingBottom: '2rem',
   },
-
   label: {
     display: 'block',
     textTransform: 'uppercase',
     color: '#999',
   },
-
   input: {
     width: '20rem',
     fontSize: '1.5rem',
@@ -118,16 +123,13 @@ const styles = StyleSheet.create({
     marginBottom: '1rem',
     textAlign: 'center',
     padding: '0.5rem',
-
     ':focus': {
       outline: 0,
     },
   },
-
   h2: {
     fontWeight: 'normal',
   },
-
   button: {
     display: 'block',
     margin: '0 auto',
@@ -137,7 +139,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#ff3333',
     color: 'white',
     width: '20rem',
+    cursor: 'pointer',
   },
+  brandIcon: {
+    marginRight: '1rem',
+  }
 })
-
-export default Signin
+export default SignIn

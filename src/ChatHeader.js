@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ChatHeader = ({room}) => {
+const ChatHeader = ({ room }) => {
   return (
     <div className="ChatHeader" style={styles.header}>
       <div className="roomInfo">
@@ -8,7 +8,7 @@ const ChatHeader = ({room}) => {
           #{room.name}
         </h2>
         <p style={styles.p}>
-          #{room.description} 
+          {room.description}
         </p>
       </div>
     </div>
