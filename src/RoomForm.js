@@ -12,6 +12,7 @@ class RoomForm extends Component {
   handleSubmit = (ev) => {
     ev.preventDefault()
     this.props.addRoom(this.state.room)
+    this.props.hideRoomForm()
   }
 
   handleChange = (ev) => {
