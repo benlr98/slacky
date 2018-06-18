@@ -14,7 +14,7 @@ const Sidebar = ({ user, signOut, loadRoom }) => {
         signOut={signOut}
       />
       <h1 style={styles.h1}>XTBC 18</h1>
-      <RoomList loadRoom={loadRoom} />
+      <RoomList />
     </aside>
   )
 }
