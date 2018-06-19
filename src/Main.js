@@ -70,6 +70,7 @@ class Main extends Component {
         <Sidebar
           user={this.props.user}
           signOut={this.props.signOut}
+          users={this.props.users}
         />
         <Chat
           user={this.props.user}
