@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, css } from 'aphrodite'
+import Select from 'react-select'
+import 'react-select/dist/react-select.css'
 
 class RoomForm extends Component {
   state = {
@@ -7,7 +9,7 @@ class RoomForm extends Component {
         name: '',
         description: '',
         public: true,
-        users: [],
+        members: [],
     },
   }
 
@@ -24,6 +26,26 @@ class RoomForm extends Component {
 
     room[target.name] = value
     this.setState({ room })
+  }
+
+  handleSelectChange = (selectedValue) => {
+    const room = {...this.state.room}
+    room.members = selectedValue
+    this.setState({ room })
+
+    console.log(selectedValue)
+  }
+
+  users = () => {
+    return Object.keys(this.props.users).map(
+      uid => {
+        const user = this.props.users[uid]
+        return {
+          value: uid,
+          label: `${user.displayName} (${user.email})`,
+        }
+      }
+    )
   }
 
   render() {
@@ -74,21 +96,21 @@ class RoomForm extends Component {
 
             {
               !this.state.room.public && (
-                <p>
+                <div>
                   <label
                     htmlFor="users"
                     className={css(styles.label)}
                   >
                     Users to add
                   </label>
-                  <input
-                    type="text"
-                    name="users"
-                    value={this.state.room.users}
-                    className={css(styles.input)}
-                    onChange={this.handleChange}
+                  <Select
+                    name="members"
+                    multi
+                    value={this.state.room.members}
+                    options={this.users()}
+                    onChange={this.handleSelectChange}
                   />
-                </p>
+                </div>
               )
             }
             <div className={css(styles.buttonContainer)}>

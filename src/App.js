@@ -12,7 +12,7 @@ class App extends Component {
     users: {},
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const user = JSON.parse(localStorage.getItem('user'))
 
     if (user) {
