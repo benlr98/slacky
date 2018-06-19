@@ -8,3 +8,11 @@ body {
 .RoomList a.active {
   background-color: rgba(255, 255, 255, 0.2);
 }
+
+.ChatHeader button {
+  opacity: 0;
+}
+
+.ChatHeader:hover button {
+  opacity: 1;
+}
