@@ -14,6 +14,14 @@ class Main extends Component {
     }
   }
 
+  isMember= (user) => {
+    if (!this.state.room.public) {
+      const memberArray = this.state.room.members
+      console.log(memberArray)
+      console.log({user})
+    }
+  }
+
   componentDidMount() {
     const { roomName } = this.props.match.params
     base.syncState(
